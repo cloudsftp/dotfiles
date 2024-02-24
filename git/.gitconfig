@@ -1,11 +1,12 @@
 [init]
 	defaultBranch = latest
+
+[push]
+	autoSetupRemote = true
+
 [user]
 	name = Fabian Weik
 	email = fabian.weik@protonmail.com
 
 [includeIf "hasconfig:remote.*.url:git@gitlab.mittwald.it/*/**"]
 	path = .gitconfig-work 
-
-[push]
-	autoSetupRemote = true

@@ -1,0 +1,7 @@
+configuration {
+  font:                           "DejaVu Sans Mono Nerd Font 24";
+  display-drun:                   "Applications";
+}
+
+@theme "theme.rasi"
+

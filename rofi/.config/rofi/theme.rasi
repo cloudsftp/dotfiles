@@ -1,0 +1,81 @@
+* {
+  fg:                             #BBBBE2;
+  input:                          #C8C8E7;
+  bg:                             #151226;
+
+  background-color:               @bg;
+  text-color:                     #000000;
+}
+
+window {
+  transparency:                   "real";
+  border-radius:                  40px;
+  width:                          50%;
+  padding:                        0.1%;
+}
+
+mainbox {
+  children:                       [ inputbar, listview ];
+  spacing:                        1%;
+  padding:                        2% 1% 2% 1%;
+}
+
+inputbar {
+  children:                       [ prompt, textbox-prompt-colon, entry ];
+  background-color:               @input;
+  text-color:                     @fg;
+  expand:                         false;
+  border-radius:                  20px;
+  padding:                        0.5%;
+}
+
+prompt {
+  enabled:                        true;
+  text-color:                     @input;
+  padding:                        0.5% 1% 0.5% 0.5%;
+  border-radius:                  10px;
+}
+
+textbox-prompt-colon {
+  expand:                         false;
+  str:                            "::";
+  background-color:               @input;
+  text-color:                     @bg;
+  padding:                        0.5% 0.5% 0.5% 0.5%;
+}
+
+entry {
+  expand:                         true;
+  padding:                        0.5% 0.5% 0.5% 0%;
+  background-color:               @input;
+  placeholder-color:              @fg;
+}
+
+listview {
+  columns:                        1;
+  lines:                          8;
+  cycle:                          false;
+  dynamic:                        true;
+  layout:                         vertical;
+}
+
+element {
+  text-color:                     @fg;
+  orientation:                    vertical;
+  border-radius:                  10px;
+  padding:                        1.5% 0% 1.5% 1.5%;
+}
+
+element selected {
+  background-color:               @fg;
+  text-color:                     @bg;
+  border-radius:                  20px;
+}
+
+element-text {
+  expand:                         true;
+  vertical-align:                 0.5;
+  margin:                         0.5% 3% 0% 3%;
+  background-color:               inherit;
+  text-color:                     inherit;
+}

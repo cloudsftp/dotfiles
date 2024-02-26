@@ -1,0 +1,106 @@
+@import "./macchiato.css";
+
+* {
+    border-radius: 0;
+    font-family: 'Operator Mono SSm Book';
+    font-size: 12pt;
+    color: @text;
+    min-height: 0;
+}
+
+window#waybar {
+    background: @surface1;
+    color: @text;
+    /* you can also GTK3 CSS functions! */
+    background-color: shade(@base, 0.9);
+    border: 2px solid alpha(@crust, 0.3);
+}
+
+tooltip {
+	background: #1E1E28;
+	border-radius: 3px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: #a4b9ef;
+}
+
+#workspaces {
+    background: @base;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 0px;
+    color: @text;
+}
+
+#workspaces button {
+    background: @overlay1;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+    min-width: 2px;
+}
+
+#workspaces button * {
+    color: @text;
+}
+
+#workspaces button.focused, #workspaces button.active {
+    background: @teal;
+}
+
+#workspaces button.focused *, #workspaces button.active * {
+    color: @crust;
+}
+
+/*#workspaces button.urgent {
+    color: #F9C096;
+}*/
+
+#workspaces button:hover {
+    background: @blue;
+    border-color: @surface0;
+}
+
+#workspaces button:hover * {
+	color: @subtext0;
+}
+
+#clock, #battery, #pulseaudio, #workspaces, #mpd  {
+	padding: 2px 10px;
+    background: @mantle;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#network {
+    padding-left: 0px;
+    padding-right: 2px;
+    background: @mantle;
+    border-radius: 0px 0px 0px 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#custom-vpn {
+    background: #332E41;
+    padding-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#clock {
+    padding-right: 15px;
+    margin-right: 5px;
+    border-radius: 0px 0px 0px 0px;
+}
+
+#custom-spotify {
+    background: #332E41;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 0px;
+}

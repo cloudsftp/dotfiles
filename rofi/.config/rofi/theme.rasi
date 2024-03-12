@@ -10,7 +10,7 @@
 window {
   transparency:                   "real";
   border-radius:                  40px;
-  width:                          50%;
+  width:                          60%;
   padding:                        0.1%;
 }
 

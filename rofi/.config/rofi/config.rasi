@@ -1,5 +1,5 @@
 configuration {
-  font:                           "DejaVu Sans Mono Nerd Font 24";
+  font:                           "DejaVu Sans Mono Nerd Font 18";
   display-drun:                   "Applications";
 }
 

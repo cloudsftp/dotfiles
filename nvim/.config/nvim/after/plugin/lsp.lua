@@ -9,6 +9,7 @@ lsp.ensure_installed({
     'jedi_language_server', -- Python
     'denols',
     'elixirls',
+    'gleam',
 })
 
 lsp.on_attach(function(_, bufnr)
@@ -36,6 +37,7 @@ lspconfig.gopls.setup({})
 lspconfig.texlab.setup({})
 lspconfig.ltex.setup({})
 lspconfig.jedi_language_server.setup({})
+lspconfig.gleam.setup({})
 --lspconfig.tsserver.setup {}
 lspconfig.volar.setup {
     root_dir = lspconfig.util.root_pattern("vite.config.ts"),

@@ -1,5 +1,11 @@
 #!/bin/bash
 
+ROOT_DIR="/home"
+
+if [ $# -eq 1 ]; then
+    ROOT_DIR="$1"
+fi
+
 get_file_idx() {
   MATCH_FILE="$1"
   i="0"
@@ -198,8 +204,6 @@ watch_episode() {
     esac
   done
 }
-
-ROOT_DIR="/mnt/HDD/Anime"
 
 cd "$ROOT_DIR"
 

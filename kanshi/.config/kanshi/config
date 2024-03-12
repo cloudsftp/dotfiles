@@ -6,7 +6,7 @@ profile {
 # Urbach Small
 profile {
     output eDP-1 disable
-    output "BNQ BenQ EW277HDR 7CJ01574SL0" mode 1920x1080 position 0,0 scale 0.833333
+    output "BNQ BenQ EW277HDR 7CJ01574SL0" mode 1920x1080 position 0,0 scale 1
 }
 
 # Espelkamp Home

@@ -26,11 +26,12 @@
 (map! :n "C-s" 'save-buffer)
 
 (after! company
-  (map! :i "C-j" 'company-select-next
-        :i "C-k" 'company-select-previous
-        :i "C-l" 'company-complete-selection))
+  (progn
+    (keymap-set company-active-map "RET" nil) ;; Not working???
+    (keymap-set company-active-map "C-j" 'company-select-next)
+    (keymap-set company-active-map "C-k" 'company-select-previous)
+    (keymap-set company-active-map "C-l" 'company-complete-selection)))
 
-;; Here are some additional functions/macros that will help you configure Doom.
 ;;
 ;; - `load!' for loading external *.el files relative to this one
 ;; - `use-package!' for configuring packages

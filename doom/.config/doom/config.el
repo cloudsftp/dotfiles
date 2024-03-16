@@ -17,7 +17,7 @@
       display-line-numbers-type 'relative)
 
 (add-to-list 'default-frame-alist
-             '(alpha-background . 80))
+             '(alpha-background . 85))
 
 ;; Org
 (setq org-directory "~/org/")
@@ -27,16 +27,10 @@
 
 (after! company
   (progn
-    (keymap-set company-active-map "RET" nil) ;; Not working???
     (keymap-set company-active-map "C-j" 'company-select-next)
     (keymap-set company-active-map "C-k" 'company-select-previous)
-    (keymap-set company-active-map "C-l" 'company-complete-selection)))
-
-;;
-;; - `load!' for loading external *.el files relative to this one
-;; - `use-package!' for configuring packages
-;; - `after!' for running code after a package has loaded
-;; - `add-load-path!' for adding directories to the `load-path', relative to
-;;   this file. Emacs searches the `load-path' when you load packages with
-;;   `require' or `use-package'.
-;; - `map!' for binding new keys
+    (keymap-set company-active-map "C-l" 'company-complete-selection)
+    (keymap-set company-active-map "RET" nil)
+    (keymap-set company-active-map "<return>" nil)
+    (keymap-set company-active-map "<up>" nil)
+    (keymap-set company-active-map "<down>" nil)))

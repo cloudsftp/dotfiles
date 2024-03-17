@@ -93,3 +93,5 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 export PATH="/home/fabi/.config/emacs/bin:$PATH"
+export PATH="/home/fabi/go/bin:$PATH"
+

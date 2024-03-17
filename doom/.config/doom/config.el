@@ -23,7 +23,9 @@
 (setq org-directory "~/org/")
 
 ;; Keymaps
-(map! :n "C-s" 'save-buffer)
+(map! :n "C-s" 'save-buffer
+      :ni "ö n" '+vterm/toggle  ;; Maybe: more similar to tmux (terminal full screen)
+      :ni "ö t" '+vterm/here)
 
 (after! company
   (progn

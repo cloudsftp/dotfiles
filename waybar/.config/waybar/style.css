@@ -1,23 +1,19 @@
-@import "./macchiato.css";
+@import "./mocha.css";
 
 * {
     border-radius: 0;
-    font-family: 'Operator Mono SSm Book';
+    font-family: 'Noto Sans';
     font-size: 12pt;
     color: @text;
     min-height: 0;
 }
 
-window#waybar {
-    background: @surface1;
-    color: @text;
-    /* you can also GTK3 CSS functions! */
-    background-color: shade(@base, 0.9);
-    border: 2px solid alpha(@crust, 0.3);
+window {
+    background: transparent;
 }
 
 tooltip {
-	background: #1E1E28;
+	background: #1e1e28;
 	border-radius: 3px;
 	border-width: 2px;
 	border-style: solid;
@@ -25,16 +21,14 @@ tooltip {
 }
 
 #workspaces {
-    background: @base;
+    background: #ffffff;
     margin-left: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
-    border-radius: 0px;
-    color: @text;
+    border-radius: 5px;
 }
 
 #workspaces button {
-    background: @overlay1;
     padding-left: 10px;
     padding-right: 10px;
     margin-left: 2px;
@@ -74,33 +68,8 @@ tooltip {
     margin-bottom: 5px;
 }
 
-#network {
-    padding-left: 0px;
-    padding-right: 2px;
-    background: @mantle;
-    border-radius: 0px 0px 0px 0px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-#custom-vpn {
-    background: #332E41;
-    padding-right: 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
 #clock {
     padding-right: 15px;
     margin-right: 5px;
-    border-radius: 0px 0px 0px 0px;
-}
-
-#custom-spotify {
-    background: #332E41;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding-right: 15px;
-    padding-left: 15px;
-    border-radius: 0px;
+    border-radius: 5px;
 }

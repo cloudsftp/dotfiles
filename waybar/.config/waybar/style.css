@@ -2,41 +2,67 @@
     border-radius: 0;
     font-family: 'Noto Sans';
     font-size: 12pt;
-    color: @text;
     min-height: 0;
+    color: white;
+}
+
+#waybar {
+    margin: 0 5px;
 }
 
 window {
     background: transparent;
 }
 
+#workspaces, #memory, #cpu, #temperature, #pulseaudio, #battery, #clock {
+    border-radius: 5px;
+}
+
 /* Workspaces */
 
-#workspaces, #memory, #cpu, #temperature, #pulseaudio, #battery, #clock {
-    margin: 5px;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 5px;
+#workspaces {
+    margin: 5px 0 0 4px;
+    padding-left: 1px;
+    padding-right: 1px;
 }
 
-#workspaces {
-    padding: 1px;
+#workspaces button {
+    border-radius: 3px;
+    margin: 0 2px;
 }
+
+#workspaces button:not(.empty) {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+#workspaces button.active {
+    background-color: rgba(115, 186, 37, 0.8);
+}
+
+#workspaces button.urgent {
+    background-color: rgba(255, 0, 0, 0.8);
+}
+
+#workspaces button:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* All other widgets */
 
 #memory, #cpu, #temperature, #pulseaudio, #battery, #clock {
+    margin: 5px 1px 0 1px;
     padding: 0 10px;
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
-
 #clock {
-    padding-right: 15px;
     margin-right: 5px;
-    border-radius: 5px;
 }
 
 tooltip {
-	background: #1e1e28;
-	border-radius: 3px;
-	border-width: 2px;
-	border-style: solid;
-	border-color: #a4b9ef;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.8);
 }

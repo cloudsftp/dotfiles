@@ -28,7 +28,6 @@
     },
     "cpu": {
         "format": "{usage}% ",
-        "tooltip": false,
         "on-click": "htop"
     },
     "memory": {

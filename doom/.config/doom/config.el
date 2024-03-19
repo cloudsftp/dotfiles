@@ -29,6 +29,7 @@
 
 (after! company
   (progn
+    ;; Key bindings
     (keymap-set company-active-map "C-j" 'company-select-next)
     (keymap-set company-active-map "C-k" 'company-select-previous)
     (keymap-set company-active-map "C-l" 'company-complete-selection)
@@ -36,3 +37,6 @@
     (keymap-set company-active-map "<return>" nil)
     (keymap-set company-active-map "<up>" nil)
     (keymap-set company-active-map "<down>" nil)))
+
+;; Backends
+;;(setq company-backends '((company-capf company-dabbrev-code)))))

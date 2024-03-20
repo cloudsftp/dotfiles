@@ -8,8 +8,12 @@
 ;;;; Theming
 
 ;; Font
+(setq font-size
+      (cond ((= (display-pixel-height) 1080) 24)
+            ((= (display-pixel-height) 2048) 12) ;; Figure out when needed
+            ((= (display-pixel-height) 4096) 32)))
+
 (setq noto-mono-family "NotoSansM Nerd Font Mono"
-      font-size 24
       doom-font (font-spec :family noto-mono-family :size font-size)
       nerd-icons-font-family noto-mono-family)
 

@@ -42,5 +42,9 @@
     (keymap-set company-active-map "<up>" nil)
     (keymap-set company-active-map "<down>" nil)))
 
+(after! lsp-mode
+  (map! :leader
+        "c r n" 'lsp-rename))
+
 ;; Backends
 ;;(setq company-backends '((company-capf company-dabbrev-code)))))

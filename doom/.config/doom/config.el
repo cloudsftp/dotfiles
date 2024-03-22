@@ -9,9 +9,10 @@
 
 ;; Font
 (setq font-size
-      (cond ((= (display-pixel-height) 1080) 24)
-            ((= (display-pixel-height) 2048) 12) ;; Figure out when needed
-            ((= (display-pixel-height) 4096) 32)))
+      (cond ((= (display-pixel-height) 1080) 24) ;; Full HD
+            ((= (display-pixel-height) 2160) 32) ;; 4K scaled (Xorg x1.5)
+            ((= (display-pixel-height) 2048) 12) ;; 2K - figure out when needed
+            ((= (display-pixel-height) 4096) 32))) ;; 4K
 
 (setq noto-mono-family "NotoSansM Nerd Font Mono"
       doom-font (font-spec :family noto-mono-family :size font-size)

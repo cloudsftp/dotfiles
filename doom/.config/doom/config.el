@@ -7,22 +7,27 @@
 
 ;;;; Theming
 
-;; Font
-(setq font-size
-      (cond ((= (display-pixel-height) 1080) 24) ;; Full HD
-            ((= (display-pixel-height) 2160) 32) ;; 4K scaled (Xorg x1.5)
-            ((= (display-pixel-height) 2048) 12) ;; 2K - figure out when needed
-            ((= (display-pixel-height) 4096) 32))) ;; 4K
-
-(setq noto-mono-family "NotoSansM Nerd Font Mono"
-      doom-font (font-spec :family noto-mono-family :size font-size)
-      nerd-icons-font-family noto-mono-family)
-
 (setq doom-theme 'catppuccin
       display-line-numbers-type 'relative)
 
 (add-to-list 'default-frame-alist
              '(alpha-background . 85))
+
+;; Font with size set dynamically
+(defun set-font ()
+  (let ((font-size
+         (cond ((= (display-pixel-height) 1080) 24) ;; Full HD
+               ((= (display-pixel-height) 2160) 36) ;; 4K scaled (Xorg x1.5)
+               ((= (display-pixel-height) 2048) 12) ;; 2K - figure out when needed
+               ((= (display-pixel-height) 4096) 36))) ;; 4K
+        (noto-mono-family "NotoSansM Nerd Font Mono"))
+    (setq doom-font (font-spec :family noto-mono-family :size font-size)
+          nerd-icons-font-family noto-mono-family)))
+
+(add-hook 'after-make-frame-functions
+          (lambda (frame)
+            (select-frame frame)
+            (set-font)))
 
 ;; Org
 (setq org-directory "~/org/")

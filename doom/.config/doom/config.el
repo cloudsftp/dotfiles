@@ -32,11 +32,12 @@
 ;; Org
 (setq org-directory "~/org/")
 
-;; Keymaps
+;;;; Keymaps
 (map! :n "C-s" 'save-buffer
       :ni "ö n" '+vterm/toggle  ;; Maybe: more similar to tmux (terminal full screen)
       :ni "ö t" '+vterm/here)
 
+;; Autocomplete
 (after! company
   (progn
     ;; Key bindings
@@ -51,6 +52,10 @@
 (after! lsp-mode
   (map! :leader
         "c r n" 'lsp-rename))
+
+;; Git
+(map! :leader
+      "g p" 'magit-push-current-to-upstream)
 
 ;; Backends
 ;;(setq company-backends '((company-capf company-dabbrev-code)))))

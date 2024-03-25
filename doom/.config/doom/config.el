@@ -59,3 +59,9 @@
 
 ;; Backends
 ;;(setq company-backends '((company-capf company-dabbrev-code)))))
+
+;; Rust inline hints
+(lsp-inlay-hints-mode)
+(setq lsp-inlay-hint-enable t
+      lsp-rust-analyzer-display-chaining-hints t
+      lsp-rust-analyzer-closing-brace-hints nil)

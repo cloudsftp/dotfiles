@@ -65,3 +65,6 @@
 (setq lsp-inlay-hint-enable t
       lsp-rust-analyzer-display-chaining-hints t
       lsp-rust-analyzer-closing-brace-hints nil)
+
+;; Disable popup of function signature in rust
+(setq lsp-signature-auto-activate '(:on-trigger-char)) ;; TODO: disable :on-server-request only for rust

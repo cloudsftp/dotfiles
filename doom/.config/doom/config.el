@@ -49,10 +49,6 @@
     (keymap-set company-active-map "<up>" nil)
     (keymap-set company-active-map "<down>" nil)))
 
-(after! lsp-mode
-  (map! :leader
-        "c r n" 'lsp-rename))
-
 ;; Git
 (map! :leader
       "g p" 'magit-push-current-to-upstream)

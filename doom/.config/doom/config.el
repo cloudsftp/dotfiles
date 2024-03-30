@@ -17,7 +17,7 @@
 (defun set-font ()
   (let ((font-size
          (cond ((= (display-pixel-height) 1080) 24) ;; Full HD
-               ((= (display-pixel-height) 2160) 32) ;; 4K scaled (Xorg x1.5)
+               ((= (display-pixel-height) 2160) 30) ;; 4K scaled (Xorg x1.5)
                ((= (display-pixel-height) 2048) 12) ;; 2K - figure out when needed
                ((= (display-pixel-height) 4096) 36))) ;; 4K
         (noto-mono-family "BitstromWera Nerd Font Mono"))
@@ -33,8 +33,10 @@
 (setq org-directory "~/org/")
 
 ;;;; Keymaps
-(map! :n "C-s" 'save-buffer
-      :ni "ö n" '+vterm/toggle  ;; Maybe: more similar to tmux (terminal full screen)
+(map! :n "C-s" 'save-buffer)
+
+;; Terminal
+(map! :ni "ö n" '+vterm/toggle  ;; Maybe: more similar to tmux (terminal full screen)
       :ni "ö t" '+vterm/here)
 
 ;; Autocomplete
@@ -57,7 +59,7 @@
 ;;(setq company-backends '((company-capf company-dabbrev-code)))))
 
 ;; Rust inline hints
-(lsp-inlay-hints-mode)
+;;(lsp-inlay-hints-mode)
 (setq lsp-inlay-hint-enable t
       lsp-rust-analyzer-display-chaining-hints t
       lsp-rust-analyzer-closing-brace-hints nil)

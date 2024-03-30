@@ -9,8 +9,13 @@ profile {
     output "BNQ BenQ EW277HDR 7CJ01574SL0" mode 1920x1080 position 0,0 scale 1
 }
 
-# Espelkamp Home
+# Espelkamp Home Laptop
 profile {
     output eDP-1 disable
-    output HDMI-A-2 mode 3840x2160 position 0,0 scale 1.5
+    output "Samsung Electric Company U28E590 HNMR506516" mode 3840x2160 position 0,0 scale 1.5
+}
+
+# Espelkamp Home Desktop
+profile {
+    output "Samsung Electric Company U28E590 HNMR506516" mode 3840x2160 position 0,0 scale 1
 }

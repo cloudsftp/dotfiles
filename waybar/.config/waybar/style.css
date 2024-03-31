@@ -1,7 +1,7 @@
 * {
     border-radius: 0;
-    font-family: 'Noto Sans';
-    font-size: 12pt;
+    font-family: "BitstromWera Nerd Font Mono";
+    font-size: 14pt;
     min-height: 0;
     color: white;
 }
@@ -14,7 +14,13 @@ window {
     background: transparent;
 }
 
-#workspaces, #memory, #cpu, #temperature, #pulseaudio, #battery, #clock {
+#workspaces,
+#memory,
+#cpu,
+#temperature,
+#pulseaudio,
+#battery,
+#clock {
     border-radius: 5px;
 }
 
@@ -22,13 +28,14 @@ window {
 
 #workspaces {
     margin: 5px 0 0 4px;
-    padding-left: 1px;
-    padding-right: 1px;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 
 #workspaces button {
     border-radius: 3px;
     margin: 0 2px;
+    padding: 5px 10px;
 }
 
 #workspaces button:not(.empty) {
@@ -49,7 +56,12 @@ window {
 
 /* All other widgets */
 
-#memory, #cpu, #temperature, #pulseaudio, #battery, #clock {
+#memory,
+#cpu,
+#temperature,
+#pulseaudio,
+#battery,
+#clock {
     margin: 5px 1px 0 1px;
     padding: 0 10px;
     background-color: rgba(255, 255, 255, 0.3);

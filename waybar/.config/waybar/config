@@ -3,13 +3,13 @@
     "spacing": 4,
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["memory", "cpu", "temperature", "pulseaudio", "battery", "clock", "day"],
+    "modules-right": ["memory", "cpu", "temperature", "pulseaudio", "battery", "clock"],
     "hyprland/workspaces": {
         "format": "{name}",
         "on-scroll-up": "hyprctl dispatch workspace e+1",
         "on-scroll-down": "hyprctl dispatch workspace e-1",
         "on-click": "activate",
-        "persistent_workspaces": {
+        "persistent-workspaces": {
            "1": [],
            "2": [],
            "3": [],
@@ -24,7 +24,7 @@
    },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%Y-%m-%d  %H:%M}"
+        "format": "{:%Y-%m-%d %H:%M}"
     },
     "cpu": {
         "format": "{usage}% ",
@@ -55,7 +55,7 @@
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
-        "format-source": "  {volume}% ",
+        "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",

@@ -16,10 +16,10 @@
 ;; Font with size set dynamically
 (defun set-font ()
   (let ((font-size
-         (cond ((= (display-pixel-height) 1080) 24) ;; Full HD
-               ((= (display-pixel-height) 2160) 30) ;; 4K scaled (Xorg x1.5)
-               ((= (display-pixel-height) 2048) 12) ;; 2K - figure out when needed
-               ((= (display-pixel-height) 4096) 36))) ;; 4K
+         (cond ((= (display-pixel-width) 1920) 24) ;; Full HD
+               ((= (display-pixel-width) 2560) 30) ;; 4K scaled (Xorg x1.5)
+               ((= (display-pixel-width) 2048) 12) ;; 2K - figure out when needed
+               ((= (display-pixel-width) 3840) 36))) ;; 4K
         (noto-mono-family "BitstromWera Nerd Font Mono"))
     (setq doom-font (font-spec :family noto-mono-family :size font-size)
           nerd-icons-font-family noto-mono-family)))

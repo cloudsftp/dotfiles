@@ -7,7 +7,7 @@ case "$HOSTNAME" in
         hyprpaper &
         ;;
     mittwald)
-        hyprpaper -c ~/.config/wallpapers/woods/path_sun.jpg &
+        hyprpaper -c ~/.config/hypr/hyprpaper-work.conf &
         swayidle &
         ;;
 esac

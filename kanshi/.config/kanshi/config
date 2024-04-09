@@ -12,7 +12,7 @@ profile {
 # Espelkamp Home Laptop
 profile {
     output eDP-1 disable
-    output "Samsung Electric Company U28E590 HNMR506516" mode 3840x2160 position 0,0 scale 1.5
+    output "Samsung Electric Company U28E590 HNMR506516" mode 3840x2160 position 0,0 scale 1
 }
 
 # Espelkamp Home Desktop

@@ -70,7 +70,7 @@ ZSH_THEME="juanghurtado"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-flow zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git git-flow zsh-autosuggestions zsh-syntax-highlighting kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -95,3 +95,4 @@ unset __conda_setup
 export PATH="/home/fabi/.config/emacs/bin:$PATH"
 export PATH="/home/fabi/go/bin:$PATH"
 
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"

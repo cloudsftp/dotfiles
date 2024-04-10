@@ -1,5 +1,6 @@
 [init]
 	defaultBranch = master
+
 [user]
 	name = Fabian Weik
 	email = f.weik@mittwald.de

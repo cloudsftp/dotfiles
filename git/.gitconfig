@@ -8,8 +8,9 @@
 	name = Fabian Weik
 	email = fabian.weik@protonmail.com
 
-[includeIf "hasconfig:remote.*.url:git@gitlab.mittwald.it/*/**"]
-	path = .gitconfig-work 
+[includeIf "hasconfig:remote.*.url:ssh://git@gitlab.mittwald.it:29418/*/**"]
+	path = .gitconfig-work
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f

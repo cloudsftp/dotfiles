@@ -1,8 +1,3 @@
-# Mobile
-profile {
-    output eDP-1 mode 1920x1080 position 0,0 scale 1
-}
-
 # Urbach Small
 profile {
     output eDP-1 disable
@@ -20,8 +15,19 @@ profile {
     output "Samsung Electric Company U28E590 HNMR506516" mode 3840x2160 position 0,0 scale 1
 }
 
-# Mittwald
+# Mittwald mobile
+profile {
+    output "California Institute of Technology 0x1404" mode 1920x1200 position 0,0 scale 0.9
+}
+
+# Mittwald desk
 profile {
     output eDP-1 disable
     output "Dell Inc. DELL S2721QSA 5CJSM43" mode 3840x2160 position 0,0 scale 1
 }
+
+# Mobile
+profile {
+    output eDP-1 mode 1920x1080 position 0,0 scale 1
+}
+

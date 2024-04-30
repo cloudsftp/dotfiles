@@ -1,33 +1,27 @@
-# Urbach Small
-profile {
+profile urbach-small {
     output eDP-1 disable
     output "BNQ BenQ EW277HDR 7CJ01574SL0" mode 1920x1080 position 0,0 scale 1
 }
 
-# Espelkamp Home Laptop
-profile {
+profile espelkamp-home {
     output eDP-1 disable
     output "Samsung Electric Company U28E590 HNMR506516" mode 3840x2160 position 0,0 scale 1
 }
 
-# Espelkamp Home Desktop
-profile {
+profile espelkamp-home-desktop {
     output "Samsung Electric Company U28E590 HNMR506516" mode 3840x2160 position 0,0 scale 1
 }
 
-# Mittwald mobile
-profile {
-    output "California Institute of Technology 0x1404" mode 1920x1200 position 0,0 scale 0.9
-}
-
-# Mittwald desk
-profile {
+profile mittwald-docked {
     output eDP-1 disable
     output "Dell Inc. DELL S2721QSA 5CJSM43" mode 3840x2160 position 0,0 scale 1
 }
 
-# Mobile
-profile {
+profile mittwald-mobile {
+    output eDP-1 mode 1920x1200 position 0,0 scale 1
+}
+
+profile standard-mobile {
     output eDP-1 mode 1920x1080 position 0,0 scale 1
 }
 

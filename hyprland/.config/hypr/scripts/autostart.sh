@@ -2,8 +2,8 @@
 
 waybar &
 
-case "$HOSTNAME" in
-    workstation)
+case "$(hostname)" in
+    workstation | SuseBook)
         hyprpaper &
         ;;
     mittwald)

@@ -1,0 +1,80 @@
+#!/bin/bash
+
+WRITE="false"
+CONTRAST="false"
+BRIGHTNESS="false"
+
+display_help() {
+  echo "usage: $0 MODE [write VAL]"
+  echo
+  echo "  MODE: brightness"
+  echo "        contrast"
+  echo
+  echo "  VAL:  <hex or dec value>"
+  echo
+  exit 2
+}
+
+while [ $# -gt 0 ]; do
+  case "$1" in
+  b | brightness)
+    BRIGHTNESS="true"
+    shift
+    ;;
+  c | contrast)
+    CONTRAST="true"
+    shift
+    ;;
+  w | write)
+    WRITE="true"
+    VAL="$2"
+    shift; shift
+    ;;
+  *)
+    display_help "$1"
+    ;;
+  esac
+done
+
+DISPLAY="1"
+
+BRIGHTNESS_ID="0x10"
+CONTRAST_ID="0x12"
+
+read_value() {
+  ID="$1"
+  VAL="$2"
+
+  ddcutil getvcp "$ID" --display "$DISPLAY" --brief | awk '{print $4}'
+}
+
+set_value() {
+  ID="$1"
+  VAL="$2"
+
+  # remove leading zeros
+  VAL="$(echo "$VAL" | sed 's/^0*//')"
+  [[ -z "$VAL" ]] && VAL="0"
+
+  ddcutil setvcp "$ID" "$VAL" --display "$DISPLAY"
+
+  if [[ "$(read_value "$ID")" != "$VAL" ]]; then
+    echo "Error: could not set id ${ID} on monitor ${MON_ADDR}"
+    echo
+    exit 1
+  fi
+}
+
+if "$CONTRAST"; then
+  ID="$CONTRAST_ID"
+elif "$BRIGHTNESS"; then
+  ID="$BRIGHTNESS_ID"
+else
+  display_help
+fi
+
+if "${WRITE}"; then
+  set_value "$ID" "$VAL"
+else
+  read_value "$ID"
+fi

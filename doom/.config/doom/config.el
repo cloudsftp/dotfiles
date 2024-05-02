@@ -16,7 +16,7 @@
 ;; Font with size set dynamically
 (defun set-font ()
   (let ((font-size
-         (cond ((= (display-pixel-width) 1920) 24) ;; Full HD
+         (cond ((= (display-pixel-width) 1920) 18) ;; Full HD
                ((= (display-pixel-width) 2560) 30) ;; 4K scaled (Xorg x1.5)
                ((= (display-pixel-width) 2048) 12) ;; 2K - figure out when needed
                ((= (display-pixel-width) 3840) 30))) ;; 4K

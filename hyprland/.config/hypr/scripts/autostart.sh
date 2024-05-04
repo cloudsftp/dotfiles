@@ -12,4 +12,6 @@ case "$(hostname)" in
         ;;
 esac
 
+syncthing &> /tmp/syncthing.log &
+
 firefox &

@@ -66,3 +66,20 @@
 
 ;; Disable popup of function signature in rust
 (setq lsp-signature-auto-activate '(:on-trigger-char)) ;; TODO: disable :on-server-request only for rust
+
+;; Custom functionality
+
+(defun open-last-org ()
+  (interactive)
+  (let ((first-window (selected-window))
+        (new-window (split-window-right))
+        (file-to-open (seq-find
+                       (apply-partially 'string-suffix-p ".org")
+                       file-name-history)))
+    (progn
+      (select-window new-window)
+      (find-file file-to-open)
+      (window-resize new-window -40 :horizontal))))
+
+(map! :leader
+      "o m" 'open-last-org)

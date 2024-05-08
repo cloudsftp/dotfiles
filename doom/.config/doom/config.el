@@ -30,7 +30,7 @@
             (set-font)))
 
 ;; Org
-(setq org-directory "~/org/")
+(setq org-directory "~/Sync/Org/")
 
 ;;;; Keymaps
 (map! :n "C-s" 'save-buffer)
@@ -67,7 +67,7 @@
 ;; Disable popup of function signature in rust
 (setq lsp-signature-auto-activate '(:on-trigger-char)) ;; TODO: disable :on-server-request only for rust
 
-;; Custom functionality
+;; Split last opened org file to the right
 
 (defun open-last-org ()
   (interactive)
@@ -83,3 +83,6 @@
 
 (map! :leader
       "o m" 'open-last-org)
+
+(add-hook 'server-after-make-frame-hook
+          'scratch-buffer)

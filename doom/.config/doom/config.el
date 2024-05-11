@@ -84,5 +84,5 @@
 (map! :leader
       "o m" 'open-last-org)
 
-(add-hook 'server-after-make-frame-hook
-          'scratch-buffer)
+;;(add-hook 'server-after-make-frame-hook
+;;          'scratch-buffer)

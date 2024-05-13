@@ -146,17 +146,17 @@ input * {
     bindsym $mod+Shift+8 move container to workspace number 8
     bindsym $mod+Shift+9 move container to workspace number 9
     bindsym $mod+Shift+0 move container to workspace number 10
-    bindsym $mod+Shift+KP_End     workspace number 1
-    bindsym $mod+Shift+KP_Down    workspace number 2
-    bindsym $mod+Shift+KP_Next    workspace number 3
-    bindsym $mod+Shift+KP_Left    workspace number 4
-    bindsym $mod+Shift+KP_Begin   workspace number 5
-    bindsym $mod+Shift+KP_Right   workspace number 6
-    bindsym $mod+Shift+KP_Home    workspace number 7
-    bindsym $mod+Shift+KP_Up      workspace number 8
-    bindsym $mod+Shift+KP_Prior   workspace number 9
-    bindsym $mod+Shift+KP_Insert  workspace number 10
-#
+    bindsym $mod+Shift+KP_End       move container to workspace number 1
+    bindsym $mod+Shift+KP_Down      move container to workspace number 2
+    bindsym $mod+Shift+KP_Next      move container to workspace number 3
+    bindsym $mod+Shift+KP_Left      move container to workspace number 4
+    bindsym $mod+Shift+KP_Begin     move container to workspace number 5
+    bindsym $mod+Shift+KP_Right     move container to workspace number 6
+    bindsym $mod+Shift+KP_Home      move container to workspace number 7
+    bindsym $mod+Shift+KP_Up        move container to workspace number 8
+    bindsym $mod+Shift+KP_Prior     move container to workspace number 9
+    bindsym $mod+Shift+KP_Insert    move container to workspace number 10
+
 # Layout stuff:
 #
     # You can "split" the current object of your focus with
@@ -218,5 +218,5 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-include /etc/sway/config.d/*.conf
+# include /etc/sway/config.d/*.conf
 include ~/.config/sway/config.d/*

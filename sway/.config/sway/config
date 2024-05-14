@@ -333,9 +333,9 @@ bindsym $mod+Print mode $screenshot
 #
 # Status Bar:
 #
-bar {
-    swaybar_command waybar
-}
+#bar {
+#    swaybar_command waybar
+#}
 
 # System mode menu
 set $mode_system "What to do? (l) lock, (e) logout, (r) reboot, (s) suspend, (Shift+s) shutdown"

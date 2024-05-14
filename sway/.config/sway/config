@@ -4,10 +4,6 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-exec_always kanshi &
-
-exec ~/bin/autostart.sh
-
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -240,7 +236,7 @@ include ~/.config/sway/windowrules
 ###################################################################
 
 # openSUSE wallpaper
-output * bg /usr/share/wallpapers/default-1920x1080.png fill
+#output * bg /usr/share/wallpapers/default-1920x1080.png fill
 
 # Enable common options for generic touchpads
 input "type:touchpad" {
@@ -378,3 +374,10 @@ exec_always {
 }
 
 exec /usr/libexec/polkit-gnome-authentication-agent-1
+
+################################
+################ Autostart
+
+exec_always kanshi &
+
+exec ~/bin/autostart.sh

@@ -93,8 +93,8 @@ input * {
     bindsym $mod+a exec ~/.config/rofi/anime.sh
     bindsym $mod+b exec ~/.config/rofi/brightness.sh
 
-    bindsym $mod+Shift+p exec /sbin/shutdown now
-    bindsym $mod+Shift+r exec /sbin/shutdown now -r
+    bindsym --locked $mod+Shift+p exec /sbin/shutdown now
+    bindsym --locked $mod+Shift+r exec /sbin/shutdown now -r
 
 #
 # Moving around:

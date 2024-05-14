@@ -94,6 +94,9 @@ input * {
     bindsym $mod+a exec ~/.config/rofi/anime.sh
     bindsym $mod+b exec ~/.config/rofi/brightness.sh
 
+    bindsym $mod+Shift+p exec /sbin/shutdown now
+    bindsym $mod+Shift+r exec /sbin/shutdown now -r
+
 #
 # Moving around:
 #
@@ -225,6 +228,8 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+include ~/.config/sway/windowrules
+
 ###################################################################
 ###################################################################
 ####################  From opensuse defaults  #####################
@@ -255,7 +260,7 @@ exec swayidle -w \
          before-sleep $screenlock
 
 bindsym --to-code {
-    $mod+b splith
+    #$mod+b splith
     $mod+v splitv
 }
 
@@ -370,32 +375,3 @@ exec_always {
 }
 
 exec /usr/libexec/polkit-gnome-authentication-agent-1
-
-###################################################################
-###################################################################
-####################  From opensuse default windows  ##############
-###################################################################
-###################################################################
-###################################################################
-
-# Wayland default floats
-for_window [app_id="(Calendar|Calculator|Power-statistics|Control-center)"] floating enable
-for_window [app_id="org.gnome.(Nautilus|Weather)"] floating enable
-for_window [app_id="nm-connection-editor"] floating enable
-for_window [app_id="(pavucontrol|psensor)"] floating enable
-for_window [app_id="evolution-alarm-notify"] floating enable
-for_window [app_id="nemo"] floating enable
-for_window [app_id="evolution" title="Compose Message"] floating enable
-for_window [app_id="evolution" title="Re(.*)"] floating enable
-for_window [app_id="evolution" title="Fwd(.*)"] floating enable
-for_window [app_id="mpv"] floating enable
-for_window [app_id="mpv"] resize set 960 540
-for_window [app_id="mpv"] border pixel 0
-for_window [app_id="firefox" title="Pushbullet"] floating enable
-for_window [app_id="firefox" title="Firefox — Sharing Indicator"] floating enable
-for_window [app_id="firefox" title="Picture-in-Picture"] floating enable
-for_window [app_id="firefox" title="Pushbullet – Mozilla Firefox"] floating enable
-for_window [app_id="firefox" title="About Mozilla Firefox"] floating enable
-
-# Brave, chrome, chromium
-for_window [title="Picture-in-picture"] floating enable

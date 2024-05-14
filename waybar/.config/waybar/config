@@ -1,14 +1,11 @@
 {
     "layer": "top", 
     "spacing": 4,
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["hyprland/window"],
+    "modules-left": ["sway/workspaces"],
+    "modules-center": ["sway/window"],
     "modules-right": ["memory", "cpu", "pulseaudio", "battery", "clock"],
     "hyprland/workspaces": {
-        "format": "{name}",
-        "on-scroll-up": "hyprctl dispatch workspace e+1",
-        "on-scroll-down": "hyprctl dispatch workspace e-1",
-        "on-click": "activate",
+        "all-outputs": "true",
         "persistent-workspaces": {
            "1": [],
            "2": [],
@@ -20,7 +17,7 @@
            "8": [],
            "9": [],
            "10": []
-          },
+          }
    },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ROOT_DIR="/home/Anime"
+ROOT_DIR="/home/fabi/Anime"
 
 if [ $# -eq 1 ]; then
     ROOT_DIR="$1"

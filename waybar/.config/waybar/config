@@ -4,8 +4,8 @@
     "modules-left": ["sway/workspaces"],
     "modules-center": ["sway/window"],
     "modules-right": ["memory", "cpu", "pulseaudio", "battery", "clock"],
-    "hyprland/workspaces": {
-        "all-outputs": "true",
+    "sway/workspaces": {
+        "all-outputs": true,
         "persistent-workspaces": {
            "1": [],
            "2": [],

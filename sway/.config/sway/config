@@ -1,9 +1,3 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
-# Read `man 5 sway` for a complete reference.
-
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -16,51 +10,17 @@ set $right l
 # Your preferred terminal emulator
 set $term kitty
 # Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
 set $menu "rofi -show drun"
 
-### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-# Im using hyprpaper instead
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
-
-### Idle configuration
-#
-# Example configuration:
-#
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
-
-### Input configuration
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
 
 input * {
     xkb_layout "de"
+}
+
+input "type:touchpad" {
+  tap enabled
+  natural_scroll enabled
+  middle_emulation enabled
 }
 
 ### Key bindings
@@ -77,10 +37,6 @@ input * {
     bindsym $mod+Space exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
-    # Despite the name, also works for non-floating windows.
-    # Change normal to inverse to use left mouse button for resizing and right
-    # mouse button for dragging.
     floating_modifier $mod normal
 
     # Reload the configuration file
@@ -89,14 +45,16 @@ input * {
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
-
+    # MISC rofi scripts
     bindsym $mod+a exec ~/.config/rofi/anime.sh
     bindsym $mod+b exec ~/.config/rofi/brightness.sh
 
+    # Power options
     bindsym --locked $mod+Shift+p exec /usr/sbin/shutdown now
     bindsym --locked $mod+Shift+r exec /usr/sbin/shutdown now -r
-
     bindsym $mod+Escape exec swaylock
+
+    bindsym $mod+c exec restart_vpn
 
 #
 # Moving around:
@@ -229,36 +187,11 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-include ~/.config/sway/windowrules
-
-###################################################################
-###################################################################
-####################  From opensuse defaults  #####################
-###################################################################
-###################################################################
-
-# openSUSE wallpaper
-#output * bg /usr/share/wallpapers/default-1920x1080.png fill
-
-# Enable common options for generic touchpads
-input "type:touchpad" {
-  tap enabled
-  natural_scroll enabled
-  middle_emulation enabled
-}
-
 # Cycle through workspaces
 bindsym $mod+tab workspace next_on_output
 bindsym $mod+Shift+tab workspace prev_on_output
 
-# Lockscreen configuration
-set $screenlock 'swaylock'
-# Idle configuration
-exec swayidle -w \
-         timeout 300 $screenlock \
-         timeout 360 'swaymsg "output * power off"' \
-              resume 'swaymsg "output * power on"' \
-         before-sleep $screenlock
+include ~/.config/sway/windowrules
 
 bindsym --to-code {
     #$mod+b splith
@@ -279,6 +212,23 @@ bindsym --locked XF86AudioMute exec volume --toggle
 bindsym --locked --no-warn XF86AudioPlay exec playerctl play-pause
 bindsym --locked --no-warn XF86AudioNext exec playerctl next
 bindsym --locked --no-warn XF86AudioPrev exec playerctl previous
+
+###################################################################
+###################################################################
+####################  From opensuse defaults  #####################
+###################################################################
+###################################################################
+
+
+# Lockscreen configuration
+set $screenlock 'swaylock'
+# Idle configuration
+exec swayidle -w \
+         timeout 300 $screenlock \
+         timeout 360 'swaymsg "output * power off"' \
+              resume 'swaymsg "output * power on"' \
+         before-sleep $screenlock
+
 
 # Screenshots
 ## Area selection shortcuts
@@ -327,29 +277,6 @@ mode $screenshot {
     bindsym $mod+Print mode "default"
 }
 bindsym $mod+Print mode $screenshot
-
-#
-# Status Bar:
-#
-#bar {
-#    swaybar_command waybar
-#}
-
-# System mode menu
-set $mode_system "What to do? (l) lock, (e) logout, (r) reboot, (s) suspend, (Shift+s) shutdown"
-mode $mode_system {
-    bindsym l exec $screenlock; mode "default"
-    bindsym e exec swaymsg exit; mode "default"
-    bindsym r exec systemctl reboot; mode "default"
-    bindsym s exec systemctl suspend; mode "default"
-    bindsym Shift+s exec systemctl poweroff; mode "default"
-
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-unbindsym $mod+Shift+e
-bindsym $mod+Shift+e mode $mode_system
 
 # Toggle notification bar
 set $toggle_notification "swaync-client -t -sw"

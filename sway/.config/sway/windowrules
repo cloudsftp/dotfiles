@@ -18,6 +18,13 @@ for_window [app_id="firefox" title="Picture-in-Picture"] floating enable
 for_window [app_id="firefox" title="Pushbullet – Mozilla Firefox"] floating enable
 for_window [app_id="firefox" title="About Mozilla Firefox"] floating enable
 
+for_window [app_id="firefox" title="^\[work\].*"] move window to workspace 2
+for_window [app_id="firefox" title="^\[music\].*"] move window to workspace 8
+
+for_window [class="Emacs"] move window to workspace 5
+
 for_window [app_id="mpv"] floating enable
 for_window [app_id="mpv"] fullscreen enable
 for_window [app_id="mpv"] border pixel 0
+
+for_window [class="Slack"] move window to workspace 10

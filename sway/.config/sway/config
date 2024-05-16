@@ -219,17 +219,6 @@ bindsym --locked --no-warn XF86AudioPrev exec playerctl previous
 ###################################################################
 ###################################################################
 
-
-# Lockscreen configuration
-set $screenlock 'swaylock'
-# Idle configuration
-exec swayidle -w \
-         timeout 300 $screenlock \
-         timeout 360 'swaymsg "output * power off"' \
-              resume 'swaymsg "output * power on"' \
-         before-sleep $screenlock
-
-
 # Screenshots
 ## Area selection shortcuts
 set $selected_window swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp

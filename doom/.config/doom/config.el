@@ -83,3 +83,10 @@
 
 (map! :leader
       "o m" 'open-last-org)
+
+;; Org
+
+(map! :after evil-org
+      :map evil-org-mode-map
+      "M-n" 'org-next-visible-heading
+      "M-p" 'org-previous-visible-heading)

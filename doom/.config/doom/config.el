@@ -88,5 +88,11 @@
 
 (map! :after evil-org
       :map evil-org-mode-map
-      "M-n" 'org-next-visible-heading
-      "M-p" 'org-previous-visible-heading)
+      "M-n" (lambda ()
+              (interactive)
+              (org-next-visible-heading 1)
+              (evil-scroll-line-to-center nil))
+      "M-p" (lambda ()
+              (interactive)
+              (org-previous-visible-heading 1)
+              (evil-scroll-line-to-center nil)))

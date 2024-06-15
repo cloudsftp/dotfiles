@@ -9,6 +9,7 @@
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;; (package! some-package)
 (package! catppuccin-theme)
+(package! gnuplot-mode)
 
 ;; fuzzy experiment
 

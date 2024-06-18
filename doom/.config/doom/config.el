@@ -35,9 +35,7 @@
 ;;;; Keymaps
 (map! :n "C-s" 'save-buffer)
 
-;; Terminal
-(map! :ni "ö n" '+vterm/toggle  ;; Maybe: more similar to tmux (terminal full screen)
-      :ni "ö t" '+vterm/here)
+;;(define-key evil-normal-state-map (kbd "s") 'evil-substitute)
 
 ;; Autocomplete
 (after! company

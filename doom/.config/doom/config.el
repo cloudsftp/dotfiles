@@ -96,3 +96,7 @@
               (interactive)
               (org-previous-visible-heading 1)
               (evil-scroll-line-to-center nil)))
+
+(require 'lsp-mode)
+
+(package-initialize)

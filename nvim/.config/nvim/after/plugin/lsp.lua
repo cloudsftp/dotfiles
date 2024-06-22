@@ -9,7 +9,6 @@ lsp.ensure_installed({
     'jedi_language_server', -- Python
     'denols',
     'elixirls',
-    'gleam',
 })
 
 lsp.on_attach(function(_, bufnr)

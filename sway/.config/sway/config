@@ -265,7 +265,7 @@ mode $screenshot {
     bindsym Escape mode "default"
     bindsym $mod+Print mode "default"
 }
-bindsym $mod+Print mode $screenshot
+bindsym $mod+Shift+s mode $screenshot
 
 # Toggle notification bar
 set $toggle_notification "swaync-client -t -sw"

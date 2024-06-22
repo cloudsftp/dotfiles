@@ -9,7 +9,12 @@
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;; (package! some-package)
 (package! catppuccin-theme)
-(package! gnuplot-mode)
+(package! gnuplot)
+
+;;(package! company-go)
+
+(when (not (package-installed-p 'company-go))
+  (package-install 'company-go))
 
 ;; fuzzy experiment
 
@@ -55,3 +60,4 @@
 ;; (unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;; (unpin! t)
+                                        ;

@@ -11,16 +11,6 @@
 (package! catppuccin-theme)
 (package! gnuplot)
 
-;;(package! company-go)
-
-(when (not (package-installed-p 'company-go))
-  (package-install 'company-go))
-
-;; fuzzy experiment
-
-;;(package! flx-ido)
-;;(package! company-fuzzy)
-
 ;; To install a package directly from a remote git repo, you must specify a
 ;; `:recipe'. You'll find documentation on what `:recipe' accepts here:
 ;; https://github.com/radian-software/straight.el#the-recipe-format

@@ -97,6 +97,5 @@
               (org-previous-visible-heading 1)
               (evil-scroll-line-to-center nil)))
 
+;; fix go mode (https://github.com/emacs-lsp/lsp-mode/issues/3577#issuecomment-2064491363)
 (require 'lsp-mode)
-
-(package-initialize)

@@ -3,7 +3,7 @@ profile urbach-small {
     output "BNQ BenQ EW277HDR 7CJ01574SL0" mode 1920x1080 position 0,0 scale 1
 }
 
-profile urback-big {
+profile urbach-big {
     output eDP-1 disable
     output "Samsung Electric Company LU28R55 HNMX202789" mode 3840x2160 position 0,0 scale 1
 }
@@ -30,3 +30,7 @@ profile standard-mobile {
     output eDP-1 mode 1920x1080 position 0,0 scale 1
 }
 
+profile presenter {
+    output eDP-1 disable
+    output HDMI-A-2 mode 1920x1080 position 0,0 scale 1
+}

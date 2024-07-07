@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-waybar &
+waybar -c ~/.config/waybar/hyprland-config &
 
 case "$(hostname)" in
     workstation | SuseBook)

@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+sleep 2
+
 waybar &
 
 firefox &
@@ -7,7 +9,7 @@ firefox &
 emacsclient --alternate-editor= --create-frame %F & # not starting correctly
 
 case "$(hostname)" in
-    workstation | SuseBook)
+    workstation | susebook)
         hyprpaper &
         ;;
     mittwald)

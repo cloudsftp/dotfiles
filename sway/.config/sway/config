@@ -273,7 +273,7 @@ mode $screenshot {
 bindsym $mod+Shift+s mode $screenshot
 
 # Toggle notification bar
-set $toggle_notification "swaync-client -t -sw"
+# set $toggle_notification "swaync-client -t -sw"
 bindsym $mod+Shift+n exec $toggle_notification
 
 # openSUSE theme
@@ -293,7 +293,7 @@ exec_always {
     gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
     test -e $SWAYSOCK.wob || mkfifo $SWAYSOCK.wob
     tail -f $SWAYSOCK.wob | $wob
-    swaync --style /etc/sway/swaync/style.css --config /etc/sway/swaync/config.json
+    # swaync --style /etc/sway/swaync/style.css --config /etc/sway/swaync/config.json
 }
 
 exec /usr/libexec/polkit-gnome-authentication-agent-1

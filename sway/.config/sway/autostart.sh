@@ -14,7 +14,5 @@ case "$(hostname)" in
         ;;
     fraunhofer)
         hyprpaper -c ~/.config/hypr/hyprpaper-work.conf &
-	;;
+        ;;
 esac
-
-syncthing --no-browser &> /tmp/syncthing.log &

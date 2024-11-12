@@ -21,7 +21,7 @@
                ((= (display-pixel-width) 2048) 12) ;; 2K - figure out when needed
                ((and (= (display-pixel-width) 3840)
                      (= (display-pixel-height) 1600)) 22) ;; 4K @ Fraunhofer
-               (= (display-pixel-width) 3840) 30)) ;; 4K
+               ((= (display-pixel-width) 3840) 30))) ;; 4K
         (noto-mono-family "BitstromWera Nerd Font Mono"))
     (setq doom-font (font-spec :family noto-mono-family :size font-size)
           nerd-icons-font-family noto-mono-family)))
@@ -110,3 +110,7 @@
 
 ;; fix go mode (https://github.com/emacs-lsp/lsp-mode/issues/3577#issuecomment-2064491363)
 (require 'lsp-mode)
+
+;; dark mode for pdf viewer
+(add-hook 'pdf-view-mode-hook 'pdf-view-midnight-minor-mode)
+(setq pdf-view-midnight-colors '("#f8f8f2" . "#282a36"))

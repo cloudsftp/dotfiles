@@ -4,3 +4,6 @@
 [user]
 	name = Fabian Weik
 	email = fabian.weik@itwm.fraunhofer.de
+
+[mu-repo]
+	remote-base-url = git@gitlab.itwm.fraunhofer.de:TV_EMO

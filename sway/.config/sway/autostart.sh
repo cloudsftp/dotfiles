@@ -1,12 +1,14 @@
 #!/usr/bin/env sh
 
-sleep 2
+sleep 1
 
 waybar &
 
 firefox &
-
 emacsclient --alternate-editor= --create-frame %F & # not starting correctly
+pavucontrol &
+
+sleep 1
 
 case "$(hostname)" in
     workstation | susebook)

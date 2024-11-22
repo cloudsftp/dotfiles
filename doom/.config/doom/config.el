@@ -20,7 +20,7 @@
                ((= (display-pixel-width) 2560) 30) ;; 4K scaled (Xorg x1.5)
                ((= (display-pixel-width) 2048) 12) ;; 2K - figure out when needed
                ((and (= (display-pixel-width) 3840)
-                     (= (display-pixel-height) 1600)) 22) ;; 4K @ Fraunhofer
+                     (= (display-pixel-height) 1600)) 26) ;; 4K @ Fraunhofer
                ((= (display-pixel-width) 3840) 30))) ;; 4K
         (noto-mono-family "BitstromWera Nerd Font Mono"))
     (setq doom-font (font-spec :family noto-mono-family :size font-size)

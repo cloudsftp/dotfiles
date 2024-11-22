@@ -19,7 +19,7 @@ profile kaiserslautern-home-desktop {
 
 profile fraunhofer-docked {
     output eDP-1 disable
-    output "Eizo Nanao Corporation EV3895 64022123" mode 3840x1600 position 0,0 scale 1
+    output "Eizo Nanao Corporation EV3895 64022123" mode 3840x1600 position 0,0 scale 0.8
 }
 
 profile mittwald-docked {

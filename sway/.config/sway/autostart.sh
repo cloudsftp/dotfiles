@@ -11,10 +11,10 @@ pavucontrol &
 sleep 1
 
 case "$(hostname)" in
-    workstation | susebook)
-        hyprpaper &
-        ;;
-    fraunhofer)
-        hyprpaper -c ~/.config/hypr/hyprpaper-work.conf &
-        ;;
+workstation | susebook)
+    hyprpaper &
+    ;;
+fraunhofer)
+    hyprpaper -c ~/.config/hypr/hyprpaper-work.conf &
+    ;;
 esac

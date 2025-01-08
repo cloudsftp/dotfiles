@@ -21,3 +21,5 @@
 	required = true
 [pull]
 	rebase = true
+[mu-repo]
+	remote-base-url = git@gitlab.itwm.fraunhofer.de:TV_EMO

@@ -5,7 +5,7 @@
 (setq user-full-name "Fabian Weik"
       user-mail-address "fabian.weik@protonmail.com")
 
-;;;; Theming
+;; Theming
 
 (setq doom-theme 'catppuccin
       display-line-numbers-type 'relative)
@@ -32,7 +32,34 @@
             (set-font)))
 
 ;; Org
+
 (setq org-directory "~/Sync/Org/")
+
+(map! :after evil-org
+      :map evil-org-mode-map
+      "M-n" (lambda ()
+              (interactive)
+              (org-next-visible-heading 1)
+              (evil-scroll-line-to-center nil))
+      "M-p" (lambda ()
+              (interactive)
+              (org-previous-visible-heading 1)
+              (evil-scroll-line-to-center nil)))
+
+(defun open-last-org ()
+  (interactive)
+  (let ((first-window (selected-window))
+        (new-window (split-window-right))
+        (file-to-open (seq-find
+                       (apply-partially 'string-suffix-p ".org")
+                       file-name-history)))
+    (progn
+      (select-window new-window)
+      (find-file file-to-open)
+      (window-resize new-window -40 :horizontal))))
+
+(map! :leader
+      "o m" 'open-last-org)
 
 ;;;; Keymaps
 (map! :n "C-s" 'save-buffer)
@@ -51,13 +78,6 @@
     (keymap-set company-active-map "<up>" nil)
     (keymap-set company-active-map "<down>" nil)))
 
-;; Git
-(map! :leader
-      "g p" 'magit-push-current-to-upstream)
-
-;; Backends
-;;(setq company-backends '((company-capf company-dabbrev-code)))))
-
 ;; Rust inline hints
 ;;(lsp-inlay-hints-mode)
 (setq lsp-inlay-hint-enable t
@@ -66,36 +86,6 @@
 
 ;; Disable popup of function signature in rust
 (setq lsp-signature-auto-activate '(:on-trigger-char)) ;; TODO: disable :on-server-request only for rust
-
-;; Split last opened org file to the right
-
-(defun open-last-org ()
-  (interactive)
-  (let ((first-window (selected-window))
-        (new-window (split-window-right))
-        (file-to-open (seq-find
-                       (apply-partially 'string-suffix-p ".org")
-                       file-name-history)))
-    (progn
-      (select-window new-window)
-      (find-file file-to-open)
-      (window-resize new-window -40 :horizontal))))
-
-(map! :leader
-      "o m" 'open-last-org)
-
-;; Org
-
-(map! :after evil-org
-      :map evil-org-mode-map
-      "M-n" (lambda ()
-              (interactive)
-              (org-next-visible-heading 1)
-              (evil-scroll-line-to-center nil))
-      "M-p" (lambda ()
-              (interactive)
-              (org-previous-visible-heading 1)
-              (evil-scroll-line-to-center nil)))
 
 ;; gnuplot-mode improvements
 (add-hook! 'gnuplot-mode-hook
@@ -131,3 +121,9 @@
   (unless (treesit-language-available-p 'gleam)
     ;; compile the treesit grammar file the first time
     (gleam-ts-install-grammar)))
+
+;; latex
+
+(setq custom/latex-preview-scale 4)
+(setq org-format-latex-options (plist-put org-format-latex-options :scale custom/latex-preview-scale))
+

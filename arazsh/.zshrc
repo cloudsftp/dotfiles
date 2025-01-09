@@ -70,12 +70,11 @@ ZSH_THEME="juanghurtado"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-flow zsh-autosuggestions zsh-syntax-highlighting kubectl)
+plugins=(git git-flow zsh-autosuggestions zsh-syntax-highlighting kubectl dagger)
 
 source $ZSH/oh-my-zsh.sh
-
 # AraZsh
-source /home/fabi/Projects/AraZsh/Scripts/main.zsh
+source /home/fabi/Programs/AraZsh/Scripts/main.zsh
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -92,7 +91,14 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-export PATH="/home/fabi/.config/emacs/bin:$PATH"
-export PATH="/home/fabi/go/bin:$PATH"
+export PATH="$PATH:/usr/local/texlive/2024/bin/x86_64-linux"
+export PATH="$PATH:/home/fabi/.config/emacs/bin"
 
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/home/fabi/.juliaup/bin' $path)
+export PATH
+
+# <<< juliaup initialize <<<

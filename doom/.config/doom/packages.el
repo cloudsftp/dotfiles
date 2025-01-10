@@ -49,6 +49,9 @@
 
            :files ("gleam-ts-*.el")))
 
+(package! anki-editor
+  :recipe (:host github :repo "anki-editor/anki-editor"))
+
 ;; Doom's packages are pinned to a specific commit and updated from release to
 ;; release. The `unpin!' macro allows you to unpin single packages...
 ;; (unpin! pinned-package)

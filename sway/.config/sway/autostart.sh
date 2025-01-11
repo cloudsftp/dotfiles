@@ -11,7 +11,7 @@ pavucontrol &
 sleep 1
 
 case "$(hostname)" in
-workstation | susebook)
+workstation | susebook | urbach)
     hyprpaper &
     ;;
 fraunhofer)

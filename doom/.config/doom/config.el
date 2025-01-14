@@ -33,7 +33,7 @@
 
 ;; Org
 
-(setq org-directory "~/Sync/Org/")
+(setq org-directory "~/Org/")
 
 (map! :after evil-org
       :map evil-org-mode-map

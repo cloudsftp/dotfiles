@@ -35,6 +35,7 @@
 
 (setq org-directory "~/Org/")
 
+
 (map! :after evil-org
       :map evil-org-mode-map
       "M-n" (lambda ()
@@ -130,3 +131,11 @@
 ;; anki
 
 (use-package! anki-editor)
+
+;; workaround black hyphens
+
+(defface org-indent '((t (:foreground "white")))
+  "Face for outline indentation.
+The default is to make it look like whitespace.  But you may find it
+useful to make it ever so slightly different."
+  :group 'org-faces)

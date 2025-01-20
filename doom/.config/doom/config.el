@@ -89,11 +89,11 @@
 (setq lsp-signature-auto-activate '(:on-trigger-char)) ;; TODO: disable :on-server-request only for rust
 
 ;; gnuplot-mode improvements
-(add-hook! 'gnuplot-mode-hook
-  (lambda ()
-    (progn 'doom/toggle-line-numbers
-           'doom/toggle-line-numbers
-           'doom/toggle-line-numbers)))
+(add-hook 'gnuplot-mode-hook
+          (lambda ()
+            (progn 'doom/toggle-line-numbers
+                   'doom/toggle-line-numbers
+                   'doom/toggle-line-numbers)))
                                         ;(add-hook! 'after-save-hook
                                         ;  (lambda ()
                                         ;    (when (eq major-mode 'gnuplot-mode)
@@ -125,13 +125,9 @@
 
 ;; latex
 
-(setq custom/latex-preview-scale 4)
-(setq org-format-latex-options (plist-put org-format-latex-options :scale custom/latex-preview-scale))
+                                        ;(setq custom/latex-preview-scale 4)
+                                        ;(setq org-format-latex-options (plist-put org-format-latex-options :scale custom/latex-preview-scale))
 
 ;; anki
 
 (use-package! anki-editor)
-
-;; workaround black hyphens
-
-(set-face-attribute 'org-indent nil :foreground "white")

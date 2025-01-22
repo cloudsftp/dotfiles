@@ -123,11 +123,6 @@
     ;; compile the treesit grammar file the first time
     (gleam-ts-install-grammar)))
 
-;; latex
-
-                                        ;(setq custom/latex-preview-scale 4)
-                                        ;(setq org-format-latex-options (plist-put org-format-latex-options :scale custom/latex-preview-scale))
-
 ;; anki
 
 (use-package! anki-editor)

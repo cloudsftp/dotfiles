@@ -5,7 +5,7 @@ sleep 1
 waybar &
 
 firefox &
-emacsclient --alternate-editor= --create-frame %F & # not starting correctly
+emacsclient --alternate-editor= --create-frame &
 pavucontrol &
 
 sleep 1

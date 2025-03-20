@@ -1,8 +1,3 @@
-;; workaround black hyphens https://github.com/doomemacs/doomemacs/issues/8250
-
-(custom-set-faces
- '(org-indent ((t (:foreground "gray")))))
-
 ;; latex preview
 ;; TODO: only on big monitors
 

@@ -127,6 +127,11 @@ input "type:touchpad" {
     bindsym $mod+Shift+KP_Prior     move container to workspace number 9
     bindsym $mod+Shift+KP_Insert    move container to workspace number 10
 
+# Do not disturb
+#
+
+bindsym $mod+m exec toggle-do-not-disturb
+
 # Layout stuff:
 #
     # You can "split" the current object of your focus with

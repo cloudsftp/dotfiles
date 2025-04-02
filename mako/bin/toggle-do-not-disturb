@@ -1,0 +1,11 @@
+prev_mode_file="/tmp/mako-mode"
+prev_mode=$(cat $prev_mode_file || echo default)
+
+curr_mode=$(makoctl mode)
+
+if [ "$curr_mode" = "do-not-disturb" ]; then
+    makoctl mode -s $prev_mode
+else
+    echo $curr_mode > $prev_mode_file
+    makoctl mode -s do-not-disturb
+fi

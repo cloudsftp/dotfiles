@@ -131,9 +131,13 @@
 
 (use-package! gptel
   :config
-  (progn (setq
-          gptel-model 'gemini-2.5-pro-exp-03-25
-          gptel-backend (gptel-make-gemini "Gemini"
-                          :key (getenv "GEMINI_API_KEY")
-                          :stream t)
-          gptel-default-mode 'org-mode)))
+  (progn
+    (setq
+     gptel-model 'gemini-2.5-pro-exp-03-25
+     gptel-backend (gptel-make-gemini "Gemini"
+                     :key (getenv "GEMINI_API_KEY")
+                     :stream t)
+     gptel-default-mode 'org-mode)
+    (transient-suffix-put 'gptel-menu (kbd "RET") :key "<return>")
+    (map! :map gptel-mode-map
+          :n "<return>" 'gptel-send)))

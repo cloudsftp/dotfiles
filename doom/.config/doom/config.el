@@ -126,3 +126,14 @@
 ;; anki
 
 (use-package! anki-editor)
+
+;; gptel
+
+(use-package! gptel
+  :config
+  (progn (setq
+          gptel-model 'gemini-2.5-pro-exp-03-25
+          gptel-backend (gptel-make-gemini "Gemini"
+                          :key '(getenv "HOME")
+                          :stream t)
+          gptel-default-mode 'org-mode)))

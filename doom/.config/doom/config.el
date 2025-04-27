@@ -134,6 +134,6 @@
   (progn (setq
           gptel-model 'gemini-2.5-pro-exp-03-25
           gptel-backend (gptel-make-gemini "Gemini"
-                          :key '(getenv "HOME")
+                          :key (getenv "GEMINI_API_KEY")
                           :stream t)
           gptel-default-mode 'org-mode)))

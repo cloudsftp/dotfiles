@@ -138,6 +138,8 @@
                      :key (getenv "GEMINI_API_KEY")
                      :stream t)
      gptel-default-mode 'org-mode)
-    (transient-suffix-put 'gptel-menu (kbd "RET") :key "<return>")
+    (transient-suffix-put #'gptel-menu (kbd "RET") :key "<return>"); TODO: remove warning
     (map! :map gptel-mode-map
-          :n "<return>" 'gptel-send)))
+          :n "<return>" 'gptel-send
+          :i "C-<return>" 'gptel-send)) ; does not work :(
+  )

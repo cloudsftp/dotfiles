@@ -14,7 +14,7 @@ case "$(hostname)" in
 workstation | susebook | urbach)
     hyprpaper &
     ;;
-fraunhofer)
+psl1198)
     hyprpaper -c ~/.config/hypr/hyprpaper-work.conf &
     ;;
 esac

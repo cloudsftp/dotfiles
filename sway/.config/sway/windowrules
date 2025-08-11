@@ -19,6 +19,7 @@ for_window [app_id="firefox" title="Pushbullet – Mozilla Firefox"] floating en
 for_window [app_id="firefox" title="About Mozilla Firefox"] floating enable
 
 # firefox plugin https://addons.mozilla.org/en-US/firefox/addon/window-titler/
+for_window [app_id="firefox" title="^\[comm\].*"] move window to workspace 1
 for_window [app_id="firefox" title="^\[work\].*"] move window to workspace 2
 for_window [app_id="firefox" title="^\[music\].*"] move window to workspace 8
 

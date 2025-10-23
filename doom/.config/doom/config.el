@@ -144,3 +144,7 @@
 (map! :map gptel-mode-map
       :n "<return>" 'gptel-send
       :i "C-<return>" 'gptel-send)
+
+;; autoformat
+
+(push 'c++-ts-mode +format-on-save-disabled-modes)

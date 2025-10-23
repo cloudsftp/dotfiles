@@ -145,6 +145,8 @@
       :n "<return>" 'gptel-send
       :i "C-<return>" 'gptel-send)
 
-;; autoformat
+;; autoformatting
 
-(push 'c++-ts-mode +format-on-save-disabled-modes)
+(dolist (mode '('json-mode 'c++-ts-mode))
+  (push mode +format-on-save-disabled-modes))
+

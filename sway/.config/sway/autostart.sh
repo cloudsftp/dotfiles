@@ -12,9 +12,9 @@ sleep 1
 
 case "$(hostname)" in
 workstation | susebook | urbach)
-    hyprpaper &
+    swaybg -i .config/wallpapers/anime/KagamiStandingNight_disappointed.png &
     ;;
 psl1198)
-    hyprpaper -c ~/.config/hypr/hyprpaper-work.conf &
+    swaybg -i .config/wallpapers/woods/path_sun.jpg &
     ;;
 esac

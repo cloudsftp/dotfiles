@@ -30,3 +30,5 @@ for_window [app_id="mpv"] fullscreen enable
 for_window [app_id="mpv"] border pixel 0
 
 for_window [app_id="org.pulseaudio.pavucontrol"] move window to workspace 10
+
+for_window [app_id="python3"] floating enable

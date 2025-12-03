@@ -4,8 +4,9 @@ sleep 1
 
 waybar &
 
-firefox &
 emacsclient --alternate-editor= --create-frame &
+
+firefox &
 pavucontrol &
 
 sleep 1

@@ -11,11 +11,24 @@ pavucontrol &
 
 sleep 1
 
+anime() {
+    echo .config/wallpapers/anime/$1
+}
+
+woods() {
+    echo .config/wallpapers/woods/$1
+}
+
 case "$(hostname)" in
-workstation | susebook | urbach)
-    swaybg -i .config/wallpapers/anime/KagamiStandingNight_disappointed.png &
+workstation)
+    photo="$(woods bench_plants.jpg)"
+    ;;
+susebook | urbach)
+    photo="$(anime KagamiStandingNight_disappointed.png)"
     ;;
 psl1198)
-    swaybg -i .config/wallpapers/woods/path_sun.jpg &
+    photo="$(woods path_sun.jpg)"
     ;;
 esac
+
+swaybg -i $photo &

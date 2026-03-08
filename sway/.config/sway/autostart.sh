@@ -20,11 +20,8 @@ woods() {
 }
 
 case "$(hostname)" in
-workstation)
+workstation | susebook | urbach)
     photo="$(woods bench_plants.jpg)"
-    ;;
-susebook | urbach)
-    photo="$(anime KagamiStandingNight_disappointed.png)"
     ;;
 psl1198)
     photo="$(woods path_sun.jpg)"

@@ -147,6 +147,5 @@
 
 ;; autoformatting
 
-(dolist (mode '('json-mode 'c++-ts-mode))
+(dolist (mode '(json-mode c++-ts-mode))
   (push mode +format-on-save-disabled-modes))
-

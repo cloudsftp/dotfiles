@@ -4,7 +4,10 @@ sleep 1
 
 waybar &
 
-emacsclient --alternate-editor= --create-frame &
+(
+    while ! systemctl --user is-active emacs; do sleep 1; done
+    emacsclient --alternate-editor= --create-frame
+) &
 
 firefox &
 pavucontrol &

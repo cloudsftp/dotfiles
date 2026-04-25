@@ -1,0 +1,3 @@
+[submodule "doom/.config/doom/modules/tools/majutsu"]
+	path = doom/.config/doom/modules/tools/majutsu
+	url = https://github.com/0WD0/doom-majutsu

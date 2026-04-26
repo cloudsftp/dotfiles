@@ -24,7 +24,9 @@ for_window [app_id="firefox" title="^\[work\].*"] move window to workspace 2
 for_window [app_id="firefox" title="^\[music\].*"] move window to workspace 8
 for_window [app_id="firefox" title="^\[local\].*"] move window to workspace 3
 
+# both needed?
 for_window [app_id="emacs"] move window to workspace 5
+for_window [instance="emacs"] move window to workspace 5
 
 for_window [app_id="mpv"] floating enable
 for_window [app_id="mpv"] fullscreen enable

@@ -22,6 +22,8 @@ urbach)
     ;;
 esac
 
+kitty &
+
 pavucontrol &
 
 sleep 1

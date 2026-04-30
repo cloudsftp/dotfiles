@@ -28,6 +28,8 @@ for_window [app_id="firefox" title="^\[local\].*"] move window to workspace 3
 for_window [app_id="emacs"] move window to workspace 5
 for_window [instance="emacs"] move window to workspace 5
 
+for_window [app_id="kitty"] move window to workspace 6
+
 for_window [app_id="mpv"] floating enable
 for_window [app_id="mpv"] fullscreen enable
 for_window [app_id="mpv"] border pixel 0

@@ -147,5 +147,18 @@
 
 ;; autoformatting
 
+(defun +rustfmt-edition ()
+  "Read edition from the nearest Cargo.toml and return --edition flag for rustfmt."
+  (when-let* ((dir (locate-dominating-file default-directory "Cargo.toml"))
+              (file (expand-file-name "Cargo.toml" dir))
+              (content (with-temp-buffer (insert-file-contents file) (buffer-string)))
+              (edition (and (string-match "edition[[:space:]]*=[[:space:]]*\"\\([^\"]+\\)\"" content)
+                            (match-string 1 content))))
+    (list "--edition" edition)))
+
+(after! apheleia
+  (setf (alist-get 'rustfmt apheleia-formatters)
+        '("rustfmt" "--quiet" "--emit" "stdout" (+rustfmt-edition))))
+
 (dolist (mode '(json-mode c++-ts-mode))
   (push mode +format-on-save-disabled-modes))

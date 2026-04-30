@@ -1,5 +1,9 @@
 #!/usr/bin/env sh
 
+systemctl --user start sway-session.target
+
+hostname="$(hostname)"
+
 sleep 1
 
 waybar &
@@ -9,7 +13,15 @@ waybar &
     emacsclient --alternate-editor= --create-frame
 ) &
 
-firefox &
+case "$hostname" in
+urbach)
+    firefox-esr &
+    ;;
+*)
+    firefox &
+    ;;
+esac
+
 pavucontrol &
 
 sleep 1
@@ -22,7 +34,7 @@ woods() {
     echo .config/wallpapers/woods/$1
 }
 
-case "$(hostname)" in
+case "$hostname" in
 workstation | susebook | urbach)
     photo="$(woods bench_plants.jpg)"
     ;;

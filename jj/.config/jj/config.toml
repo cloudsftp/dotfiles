@@ -1,0 +1,12 @@
+#:schema https://docs.jj-vcs.dev/latest/config-schema.json
+
+[user]
+name = "Fabian Weik"
+email = "fabian.weik@protonmail.com"
+
+[ui]
+default-command = "log"
+diff-editor = ":builtin"
+
+[git]
+ignore-filters = ["lfs"]

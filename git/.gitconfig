@@ -5,8 +5,8 @@
 	autoSetupRemote = true
 
 [user]
-	name = Fabian Weik
-	email = fabian.weik@protonmail.com
+	name = Clouds
+	email = me@cloudsftp.de
 
 [includeIf "hasconfig:remote.*.url:git@gitlab.itwm.fraunhofer.de:*/**"]
 	path = .gitconfig-work

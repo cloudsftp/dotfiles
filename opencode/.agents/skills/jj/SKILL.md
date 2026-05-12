@@ -21,8 +21,10 @@ In jj it works differently from git.
 You have some different options, but the basic flow is the following:
 
 You can checkout a commit with `jj edit -r <id>`.
-You can change the description of a commit with `jj describe -r <id> -m <message>`.
+You can change the description of a change with `jj describe -r <id> -m <message>`.
 Create a new commit with `jj new -r <id>` ontop of the commit with the id `<id>`.
+
+Committing is describing a change and then creating a new commit on top.
 
 ### Bookmarks
 

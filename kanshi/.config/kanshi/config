@@ -22,6 +22,11 @@ profile fraunhofer-docked {
     output "Eizo Nanao Corporation EV3895 64022123" mode 3840x1600 position 0,0 scale 0.8
 }
 
+profile fraunhofer-docked-jaroslaw {
+    output eDP-1 disable
+    output "Eizo Nanao Corporation EV3895 63948123" mode 3840x1600 position 0,0 scale 0.8
+}
+
 profile fraunhofer-docked-new {
     output eDP-1 disable
     output "Eizo Nanao Corporation EV3895 51774102" mode 3840x1600 position 0,0 scale 0.8
